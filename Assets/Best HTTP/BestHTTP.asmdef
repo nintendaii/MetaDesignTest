@@ -1,7 +1,7 @@
 {
-    "name": "BestHTTP",
-    "references": [],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-	"allowUnsafeCode": true
+  "name": "BestHTTP",
+  "references": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": true
 }
