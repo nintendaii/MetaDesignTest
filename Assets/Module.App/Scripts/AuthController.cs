@@ -8,21 +8,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using Module.App.Scripts.Helpers;
+using UnityEngine.SceneManagement;
 
 namespace Module.App.Scripts
 {
-    public class AuthController: ComponentControllerBase<ModelBase, AuthView>,IBindComponent
+    public class AuthController: ComponentControllerBase<ModelBase, AuthView>,IBindComponentMain
     {
         private void OnEnable()
         {
             View.checkEmailButton.onClick.AddListener(CheckEmail);
             View.checkUsernameButton.onClick.AddListener(CheckUsername);
+            View.creativeModeButton.onClick.AddListener(RedirectToCreativeMode);
         }
 
         private void OnDisable()
         {
             View.checkEmailButton.onClick.RemoveListener(CheckEmail);
             View.checkUsernameButton.onClick.RemoveListener(CheckUsername);
+            View.creativeModeButton.onClick.RemoveListener(RedirectToCreativeMode);
+        }
+        
+        private void RedirectToCreativeMode()
+        {
+            SceneManager.LoadScene("CreativeMode");
         }
 
         private void CheckEmail()
@@ -126,5 +134,6 @@ namespace Module.App.Scripts
         public TMP_InputField usernameInputField;
         public Button checkUsernameButton;
         public TMP_Text usernameStatusText;
+        public Button creativeModeButton;
     }
 }
