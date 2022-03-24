@@ -27,6 +27,7 @@ namespace Module.App.Scripts
         {
             ShowComponent();
             View.contentText.text = contentText;
+            View.inputField.text = "";
             View.cancelButton.gameObject.SetActive(isCancelButton);
             View.inputField.gameObject.SetActive(isInputField);
             View.submitButton.onClick.AddListener(delegate
@@ -40,7 +41,7 @@ namespace Module.App.Scripts
         }
 
         public void SetAlert() =>
-            View.inputField.text = "Preset already exists. Try another name";
+            View.contentText.text = "Preset already exists. Try another name";
     }
 
     [Serializable]

@@ -18,11 +18,9 @@ namespace Module.App.Scripts
             if (File.Exists(cachePath + presetsJsonFileName))
             {
                 ReadPresetsData();
-                Debug.LogError("Read");
             }
             else
             {
-                Debug.LogError("Fill");
                 FillPresetsByDefault();
             }
         }
@@ -59,7 +57,6 @@ namespace Module.App.Scripts
         private void ReadPresetsData()
         {
             var fileData = File.ReadAllText(cachePath + presetsJsonFileName);
-            Debug.LogError(fileData);
             presetsContainer = JsonUtility.FromJson<PresetsContainer>(fileData);
         }
     }

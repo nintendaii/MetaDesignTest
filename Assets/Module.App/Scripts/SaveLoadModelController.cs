@@ -77,7 +77,11 @@ namespace Module.App.Scripts
             {
                 foreach (var presetModel in allPresets)
                 {
-                    presetsFactoryController.ReleasePreset(presetModel);
+                }
+
+                for (var i = allPresets.Count; i --> 0;)
+                {
+                    presetsFactoryController.ReleasePreset(allPresets[i]);
                 }
             }
         }
