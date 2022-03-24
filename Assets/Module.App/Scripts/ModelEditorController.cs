@@ -17,6 +17,18 @@ namespace Module.App.Scripts
             currentEditingMaterial = View.bodyMaterial;
         }
 
+        public EditorData GetEditorData() => new()
+        {
+            SleevesColor = View.sleevesMaterial.color,
+            BodyColor = View.bodyMaterial.color
+        };
+
+        public void SetUpMaterials(Color sleevesColor, Color bodyColor)
+        {
+            View.sleevesMaterial.color = sleevesColor;
+            View.bodyMaterial.color = bodyColor;
+        }
+
         private void EditSleeves()
         {
             View.colorPicker.gameObject.SetActive(true);
@@ -49,5 +61,11 @@ namespace Module.App.Scripts
         public FlexibleColorPicker colorPicker;
         public Material sleevesMaterial;
         public Material bodyMaterial;
+    }
+
+    public class EditorData
+    {
+        public Color SleevesColor;
+        public Color BodyColor;
     }
 }
